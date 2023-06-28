@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <!-- Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="outside">
+        <div class="front">
+          <p>Happy Birthday Umar</p>
+          <div class="cake">
+            <div class="top-layer"></div>
+            <div class="middle-layer"></div>
+            <div class="bottom-layer"></div>
+            <div class="candle"></div>
+          </div>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="inside">
+        <p>Today is a day to celebrate you, coconut head! I hope this year brings you exciting opportunities, wonderful experiences, and endless blessings. Happy birthday!</p>
+        <h1>&#127873;</h1>
+      </div>
+    </div>
+
+    <audio id="myAudio" loop style="opacity: 0">
+      <source src="Happy-Birthday-Song-DJ-Bobo-Download.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+        var x = document.getElementById("myAudio");
+        x.play();
+
+         // stop microphone stream acquired by getUserMedia
+          stream.getTracks().forEach(function (track) { track.stop(); });
+      });
+    </script>
+  </body>
+</html>
